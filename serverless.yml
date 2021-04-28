@@ -1,0 +1,26 @@
+service: serverless-img-tools
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  resizeImage:
+    handler: "src/func/resize.handler"
+    events:
+     - httpApi:
+         path: /resize
+         method: get
+
+  getDropBoxLink:
+    handler: "src/func/dropbox.handler"
+    events:
+     - httpApi:
+         path: /dropbox
+         method: get
