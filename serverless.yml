@@ -24,3 +24,13 @@ functions:
      - httpApi:
          path: /dropbox
          method: get
+
+  react:
+    handler: "src/func/react-server.handler"
+    events:
+      - httpApi:
+          path: /react
+          method: get
+      - httpApi:
+         path: /react
+         method: post
